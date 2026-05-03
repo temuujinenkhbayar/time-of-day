@@ -60,6 +60,11 @@
             </ul>
         </div>
 
+        <p>To do this, I'm using a compound if block and selecting ranges and using the 
+            getHours() method of the Date() object.</p>
+
+        <p>To make changes, I use <strong>document.getElementById</strong> and <strong>document.querySelector</strong> to 
+        identify items on the page to change.</p>
         <img id="time-pic" src="https://dummyimage.com/300x400" alt="Time of Day Image">
     </div>
 
@@ -94,12 +99,12 @@
             myColor = "orange";
             myPic = "morning.jpg";
 
-        }elseif(myHour >= 12 && myHour < 18){
+        }else if(myHour >= 12 && myHour < 18){
             mySentence = "Good afternoon!";
             myColor = "green";
             myPic = "afternoon.jpg";
 
-        }elseif(myHour >= 18 && myHour < 23){
+        }else if(myHour >= 18 && myHour < 23){
             mySentence = "Good evening!";
             myColor = "blue";
             myPic = "evening.jpg";
@@ -113,7 +118,7 @@
         //adds sentence to page
         document.getElementById("time-text").innerHTML = mySentence;
 
-        //document.body.style.backgroundColor = myColor;
+        //adds color to html
         document.querySelector('html').style.backgroundColor = myColor;
 
 
