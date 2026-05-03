@@ -64,24 +64,32 @@
 
 
 
-        myDate = new Date();
-        myHour = myDate.getHours();
-        mySentence = "";
-        myColor = "";
+        let myDate = new Date();
+        let myHour = myDate.getHours();
+        let mySentence = "";
+        let myColor = "";
+        let myPic = "";
 
         if(myHour >= 12){
         //alert("It's after noon!");
-        mySentence = "It's after noon!";
-        myColor = "blue";
+            mySentence = "It's after noon!";
+            myColor = "blue";
+            myPic = "afternoon.jpg";
         }else{
         //alert("It's not after noon!")
-        mySentence = "It's not after noon!";
-        myColor = "yellow";
+            mySentence = "It's not after noon!";
+            myColor = "yellow";
+            myPic = "night.jpg";
         }
 
+        //adds sentence to page
         document.getElementById("time-text").innerHTML = mySentence;
+
         //document.body.style.backgroundColor = myColor;
         document.querySelector('html').style.backgroundColor = myColor;
+
+        //change to our picture
+        document.getElementById("time-pic").src = myPic;
 
 
 
