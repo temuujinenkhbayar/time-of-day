@@ -62,6 +62,15 @@
            the background color using document.querySelector('html') 
         */
 
+        /*
+        Use JavaScript to determine the current hour, and presents a different image, custom message, and color based on each of the following times of day:
+
+        Morning (5am to 12 noon)
+        Afternoon (12 noon to 6pm)
+        Evening (6pm to 11pm)
+        Night (11pm to 5am)
+
+        */
 
 
         let myDate = new Date();
@@ -70,15 +79,25 @@
         let myColor = "";
         let myPic = "";
 
-        if(myHour >= 12){
-        //alert("It's after noon!");
-            mySentence = "It's after noon!";
-            myColor = "blue";
+        if(myHour >= 5 && myHour < 12){
+        //alert("good morning!");
+            mySentence = "Good morning!";
+            myColor = "orange";
+            myPic = "morning.jpg";
+
+        }elseif(myHour >= 12 && myHour < 18){
+            mySentence = "Good afternoon!";
+            myColor = "green";
             myPic = "afternoon.jpg";
+
+        }elseif(myHour >= 18 && myHour < 23){
+            mySentence = "Good evening!";
+            myColor = "blue";
+            myPic = "evening.jpg";
+        
         }else{
-        //alert("It's not after noon!")
-            mySentence = "It's not after noon!";
-            myColor = "yellow";
+            mySentence = "Good evening!";
+            myColor = "purple";
             myPic = "night.jpg";
         }
 
@@ -88,24 +107,11 @@
         //document.body.style.backgroundColor = myColor;
         document.querySelector('html').style.backgroundColor = myColor;
 
-        myPic = "images/" + myPic;
 
-        console.log(myPic);
-        alert(myPic);
+        myPic = "images/" + myPic;
 
         //change to our picture
         document.getElementById("time-pic").src = myPic;
-
-
-
-
-
-
-
-
-
-
-
 
         // Fixes HTML/CSS Checker links
         document.addEventListener("DOMContentLoaded", function() {
